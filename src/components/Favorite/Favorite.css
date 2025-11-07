@@ -1,0 +1,214 @@
+/* Favorite sedction start  */
+
+.favorite__title {
+  color: var(--text-dark, #403f3d);
+  text-align: center;
+  font-family: Inter;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 75px */
+  margin-top: 100px;
+  margin-bottom: 40px;
+}
+.favorite__title span {
+  color: var(--text-accent, #b0907a);
+}
+.favorite__sliders {
+  width: 100%;
+  position: relative;
+}
+.favorite__slide {
+  display: flex;
+  min-width: 480px;
+  max-width: 1162px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.favorite__slide__center {
+  width: 480px;
+  margin: auto;
+  text-align: center;
+}
+.favorite__slide__image {
+  width: 480px;
+  height: 480px;
+}
+.farovite__slide__title {
+  color: #403f3d;
+  text-align: center;
+
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 30px */
+  margin: 16px 0px 16px;
+}
+.farovite__slide__text {
+  color: #403f3d;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  padding: 0px 10px;
+  margin-bottom: 16px;
+}
+.farovite__slide__price {
+  color: #403f3d;
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 30px */
+}
+.favorite__icon__wrapper {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid #665f55;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.4s ease-in-out;
+}
+.favorite__icon__wrapper:hover {
+  background: #665f55;
+}
+.favorite__icon__wrapper:hover img {
+  filter: brightness(0) invert(1);
+}
+.favorite__icon__right {
+  right: 0;
+}
+.favorite__slide__points {
+  display: flex;
+  width: 160px;
+  margin: auto;
+  column-gap: 12px;
+  justify-content: center;
+  margin-top: 40px;
+  overflow: hidden;
+}
+.favorite__slide__point {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background: #c1b6ad;
+}
+.favorite__slide__point-active {
+  background: #665f55;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0, 0, 0, 0.1);
+}
+.loader__inner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: #ff3d00;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.favorite__error--hidden {
+  display: none;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 576px) {
+  .favorite__title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%; /* 40px */
+  }
+  .favorite__icon__wrapper {
+    display: none;
+  }
+  .favorite__slide__image {
+    max-width: 348px;
+    height: 348px;
+  }
+
+  .favorite__slide {
+    display: flex;
+    min-width: 280px;
+    max-width: 1162px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+  .favorite__slide__center {
+    max-width: 480px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+  .favorite__slide__image {
+    max-width: 480px;
+    width: 100%;
+    height: 480px;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding: 0px 16px;
+    max-width: 100%;
+  }
+
+  .favorite__slide {
+    min-width: 200px;
+  }
+  .favorite__slide__center {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+  .favorite__slide__image {
+    width: 348px;
+    height: 348px;
+  }
+}
+
+/* Hover effects – faqat desktop uchun */
+@media (hover: hover) and (pointer: fine) {
+  /* Favorite section arrow hover */
+  .favorite__icon__wrapper:hover {
+    background: #665f55;
+  }
+  .favorite__icon__wrapper:hover img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+/* Hover effects – mobil qurilmalarda (o‘chirilgan) */
+@media (hover: none) and (pointer: coarse) {
+  .favorite__icon__wrapper:hover {
+    all: unset;
+  }
+}
