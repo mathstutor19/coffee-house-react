@@ -9,12 +9,7 @@
 html {
   scroll-behavior: smooth;
 }
-body {
-  background: #e1d4c9;
-  font-family: "Inter", sans-serif;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
+
 a {
   text-decoration: none;
 }

@@ -9,14 +9,12 @@ import Mobile from "../../components/Mobile/Mobile";
 const Home = () => {
   return (
     <div>
-      <Header />
       <main className="container">
         <Enjoy />
         <Favorite />
         <About />
         <Mobile />
       </main>
-      <Footer />
     </div>
   );
 };

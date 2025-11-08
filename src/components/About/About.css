@@ -1,6 +1,6 @@
 /* About section start  */
 .about__title {
-  color: #403f3d;
+  color: var(--text-color);
   font-family: Inter;
   font-size: 60px;
   font-style: normal;

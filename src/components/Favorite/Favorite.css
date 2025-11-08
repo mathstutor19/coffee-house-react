@@ -1,7 +1,7 @@
 /* Favorite sedction start  */
 
 .favorite__title {
-  color: var(--text-dark, #403f3d);
+  color: var(--text-color);
   text-align: center;
   font-family: Inter;
   font-size: 60px;
@@ -37,7 +37,7 @@
   height: 480px;
 }
 .farovite__slide__title {
-  color: #403f3d;
+  color: var(--text-color);
   text-align: center;
 
   font-family: Inter;
@@ -48,7 +48,7 @@
   margin: 16px 0px 16px;
 }
 .farovite__slide__text {
-  color: #403f3d;
+  color: var(--text-color);
   text-align: center;
   font-family: Inter;
   font-size: 16px;
@@ -59,7 +59,7 @@
   margin-bottom: 16px;
 }
 .farovite__slide__price {
-  color: #403f3d;
+  color: var(--text-color);
   text-align: center;
   font-family: Inter;
   font-size: 24px;
@@ -74,11 +74,13 @@
   justify-content: center;
   align-items: center;
   border-radius: 100px;
-  border: 1px solid #665f55;
+  border: 1px solid var(--text-color);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.4s ease-in-out;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 .favorite__icon__wrapper:hover {
   background: #665f55;

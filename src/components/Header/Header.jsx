@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Header.css";
 import logo from "../../images/icons/logo.svg";
 import coffeeCup from "../../images/icons/coffee-cup.svg";
-
+import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import { useDarkMode } from "../../context/DarkModeContext.jsx";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const { darkMode } = useDarkMode();
+  useEffect(() => {
+    document.body.classList.toggle("dark", darkMode);
+  }, [darkMode]);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -13,40 +19,48 @@ const Header = () => {
   return (
     <header className="container header">
       <nav className="nav">
-        <a href="/">
-          <img className="nav__logo" src={logo} alt="logo" />
-        </a>
+        <Link to={"/"}>
+          <div className={darkMode ? "dark" : ""}>
+            <img className="nav__logo" src={logo} alt="logo" />
+          </div>
+        </Link>
 
         {/* Desktop menu */}
         <ul className="nav__items">
           <li>
-            <a className="nav__link" href="/">
+            <Link className="nav__link" smooth to="/">
               Favorite coffee
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="nav__link" href="/">
+            <Link className="nav__link" smooth to="/">
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="nav__link" href="/">
+            <Link className="nav__link" smooth to="/">
               Mobile app
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="nav__link" href="#footer">
+            <HashLink className="nav__link" smooth to="#footer">
               Contact us
-            </a>
+            </HashLink>
           </li>
         </ul>
-
+        <DarkModeToggle />
         {/* Menu link */}
         <div className="nav__menu">
-          <a href="/menu" className="nav__menu__link">
+          <Link to={"/menu"} className="nav__menu__link">
             <span>Menu</span>
-            <img src={coffeeCup} alt="coffee-cup" />
-          </a>
+            <div className={darkMode ? "dark" : ""}>
+              <img
+                className="nav__coffee-cup-icon"
+                src={coffeeCup}
+                alt="coffee-cup"
+              />
+            </div>
+          </Link>
         </div>
 
         {/* Hamburger button */}
@@ -86,7 +100,14 @@ const Header = () => {
         <div className="nav__mobile__menu">
           <a href="/menu" className="nav__mobile__link">
             <span>Menu</span>
-            <img src={coffeeCup} alt="coffee-cup" />
+            <div className={darkMode ? "dark" : ""}>
+              {/* <CoffeeIcon /> */}
+              <img
+                className="nav__coffee-cup-icon"
+                src={coffeeCup}
+                alt="coffee-cup"
+              />
+            </div>
           </a>
         </div>
       </nav>
