@@ -5,7 +5,9 @@ import pinAlt from "../../images/icons/pin-alt.svg";
 import phone from "../../images/icons/phone.svg";
 import clock from "../../images/icons/clock.svg";
 import "./Footer.css";
+import { useDarkMode } from "../../context/DarkModeContext";
 const Footer = () => {
+  const { darkMode } = useDarkMode();
   return (
     <footer id="footer" className="container">
       <div className="footer">
@@ -17,7 +19,7 @@ const Footer = () => {
             <li className="footer__social">
               <a href="">
                 <img
-                  className="footer__social__img"
+                  className={`footer__social__img ${darkMode ? "dark" : ""}`}
                   src={twitter}
                   alt="twitter"
                 />
@@ -26,7 +28,7 @@ const Footer = () => {
             <li className="footer__social">
               <a href="">
                 <img
-                  className="footer__social__img"
+                  className={`footer__social__img ${darkMode ? "dark" : ""}`}
                   src={instagram}
                   alt="instagram"
                 />
@@ -35,7 +37,7 @@ const Footer = () => {
             <li className="footer__social">
               <a href="">
                 <img
-                  className="footer__social__img"
+                  className={`footer__social__img ${darkMode ? "dark" : ""}`}
                   src={facebook}
                   alt="facebook"
                 />
@@ -52,15 +54,27 @@ const Footer = () => {
               href="https://maps.app.goo.gl/fyYDikBEUEYPMyWs5"
               rel="noreferrer"
             >
-              <img src={pinAlt} alt="pin-alt" />
+              <img
+                className={`footer__social__img ${darkMode ? "dark" : ""}`}
+                src={pinAlt}
+                alt="pin-alt"
+              />
               <span>8558 Green Rd., LA</span>
             </a>
             <a className="footer__address__link" href="tel:+1(603)555-0123">
-              <img src={phone} alt="phone" />
+              <img
+                className={`footer__social__img ${darkMode ? "dark" : ""}`}
+                src={phone}
+                alt="phone"
+              />
               <span>+1 (603) 555-0123</span>
             </a>
             <a className="footer__address__link" href="">
-              <img src={clock} alt="clock" />
+              <img
+                className={`footer__social__img ${darkMode ? "dark" : ""}`}
+                src={clock}
+                alt="clock"
+              />
               <span>Mon-Sat: 9:00 AM – 23:00 PM</span>
             </a>
           </address>

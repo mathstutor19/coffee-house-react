@@ -88,6 +88,9 @@
 .favorite__icon__wrapper:hover img {
   filter: brightness(0) invert(1);
 }
+.favorite__icon-image.dark {
+  filter: brightness(0) invert(1);
+}
 .favorite__icon__right {
   right: 0;
 }

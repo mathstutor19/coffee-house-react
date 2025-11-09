@@ -28,22 +28,22 @@ const Header = () => {
         {/* Desktop menu */}
         <ul className="nav__items">
           <li>
-            <Link className="nav__link" smooth to="/">
+            <Link className="nav__link" to="/">
               Favorite coffee
             </Link>
           </li>
           <li>
-            <Link className="nav__link" smooth to="/">
+            <Link className="nav__link" to="/">
               About
             </Link>
           </li>
           <li>
-            <Link className="nav__link" smooth to="/">
+            <Link className="nav__link" to="/">
               Mobile app
             </Link>
           </li>
           <li>
-            <HashLink className="nav__link" smooth to="#footer">
+            <HashLink className="nav__link" to="#footer">
               Contact us
             </HashLink>
           </li>

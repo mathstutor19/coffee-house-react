@@ -7,6 +7,7 @@ import coffeeSlider3 from "../../images/coffee-slider-3.png";
 
 const images = [coffeeSlider1, coffeeSlider2, coffeeSlider3];
 import "./Favorite.css";
+import { useDarkMode } from "../../context/DarkModeContext";
 
 const Favorite = () => {
   const [slides, setSlides] = useState([]);
@@ -18,7 +19,7 @@ const Favorite = () => {
   const progressRef = useRef(null);
   const autoSlideRef = useRef(null);
   const slideInterval = 5000; // 5 soniya
-
+  const { darkMode } = useDarkMode();
   // --- Fetch slides from API
   useEffect(() => {
     const fetchSlides = async () => {
@@ -120,14 +121,18 @@ const Favorite = () => {
           className="favorite__icon__wrapper favorite__icon__left"
           onClick={prevSlide}
         >
-          <img src={arrowLeft} alt="arrow-left" />
+          <img
+            className={`favorite__icon-image ${darkMode ? "dark" : ""}`}
+            src={arrowLeft}
+            alt="arrow-left"
+          />
         </button>
 
         <button
           className="favorite__icon__wrapper favorite__icon__right"
           onClick={nextSlide}
         >
-          <img src={arrowRight} alt="arrow-right" />
+          <img className={`favorite__icon-image ${darkMode ? "dark" : ""}`} src={arrowRight} alt="arrow-right" />
         </button>
       </div>
 

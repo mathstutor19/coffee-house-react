@@ -258,6 +258,7 @@ const Menu = () => {
 
       {selectedProduct && (
         <Modal
+          image={images[selectedProduct.category]?.[selectedProduct.id - 1]}
           product={selectedProduct}
           onClose={() => setSelectedProduct(null)}
           onAddToCart={addToCartLocal}
